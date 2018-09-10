@@ -43,8 +43,7 @@ router.put("/update-game", (req, res) => {
 
 router.delete("/delete-game/:id", (req, res) => {
   const { id } = req.params;
-  console.log("ID TYPE", typeof id);
-  // const idToString = `${id}`
+ 
   Game.findByIdAndRemove(id)
     .then(removed => {
       console.log("ID OF REMOVED GAME", removed._id);

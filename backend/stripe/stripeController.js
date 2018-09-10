@@ -27,7 +27,6 @@ const stripeCharge = async function(req, res) {
       .catch(err => {
         res.status(500).json("error updating user information", err);
       });
-      // console.log("USER AFTER CALLING FINDBYID", user);
 
     } else if (req.body.amount = tier2Price) {
       let { status } = await stripe.charges.create({
@@ -47,13 +46,13 @@ const stripeCharge = async function(req, res) {
       }).catch(err => {
         res.status(500).json("error updating user information", err);
       })
-      // res.json({ status, user });
+      
     } else {
       res
         .status(422)
         .json({ message: `Charge must be ${tier1Price} or ${tier2Price} `});
     }
-    // console.log('1 :', user);
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

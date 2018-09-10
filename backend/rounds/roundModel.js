@@ -22,7 +22,7 @@ const roundSchema = new mongoose.Schema({
     type: {
         type: String,
     },
-    questions: { //supplied by API
+    questions: {
         type: Array,
         
     },
